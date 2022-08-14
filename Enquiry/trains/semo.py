@@ -1,0 +1,16 @@
+l=['Rupali',7276116676,26,'python']
+print(l)
+print(len(l))
+print(type(l))
+l[0]='mulje'
+print(l)
+l.insert(1,7875257423)
+print(l)
+l.append('Ruby')
+print(l)
+l.remove("Ruby")
+print(l)
+l.pop(1)
+print(l)
+l.pop()
+print(l)

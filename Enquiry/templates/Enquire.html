@@ -1,0 +1,100 @@
+{%  load static %}
+<html>
+<head>
+<title>Enquire train details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--link rel="stylesheet" href="{% static 'trains/css/home.css' %}"-->
+    <style>
+    div.h1
+    {
+    font-family:"Times New Roman";
+    font-size: 3em;
+    font-style: italic;
+    font-weight: 900;
+     }
+    button
+    {
+        background: #11b5b1;
+        width:100px;
+        border: none;
+        outline: none;
+        color: #fff;
+        height: 35px;
+        border-radius: 30px;
+        margin-top: 20px;
+        box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+    }
+    </style>
+</head>
+<body style="background-color: #adb1bc">
+
+<center>
+<!-- Navbar -->
+<div class="w3-top">
+
+  <div class="w3-bar w3-black w3-card">
+
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+
+     <a href="home" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+      <a href="fetch" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FETCH TRAIN DETAILS</a>
+      <center><a href="enquire" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SEARCH</a></center>
+      <a href="contactus" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+      <a href="logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOGOUT</a>
+      </div>
+</div>
+</center>
+<center><div style="padding-top: 20px; margin-top: 30px; background-color: #2f4f4f;color: white" class="h1">Welcome to Railway Enquiry System</div></center>
+
+<b><center><h1 style="color: #4f0a20;font-family:Times-New Roman;font-size:40px">Search Details</h1></center></b>
+{% include 'message.html' %}
+<form action="enquire" method="post" class="container">
+    <table cellspacing="5" cellpadding="5" align="center" border="10 px solid white">
+
+          {% csrf_token %}
+
+
+        <tr>
+            <td><label>
+                    <input name="search" type="radio" value="t_name" id="t_name"><span></span>
+                 </label>
+            </td>
+            <td style="color:black"><h4>Enter Train Name:-</h4></td>
+        <td><input type="text" onclick="document.getElementById('t_name').checked=true;"placeholder="train_name:-" name="train_name" ></td>
+
+        </tr>
+
+        <tr>
+            <td><label>
+                    <input name="search" type="radio" value="t_start" id="t_start"><span></span>
+                 </label>
+            </td>
+            <td style="color: black"><h4>Enter Start_Station:-</h4></td>
+        <td><input type="text" onclick="document.getElementById('t_start').checked=true;"placeholder="Start_Station:-" name="start_station"></td>
+        </tr>
+
+        <tr>
+            <td><label>
+                    <input name="search" type="radio" value="t_end" id="t_end"><span></span>
+                 </label>
+            </td>
+            <td style="color: black"><h4>Enter End_Station:-</h4></td>
+        <td><input type="text" onclick="document.getElementById('t_end').checked=true;"placeholder="End_Station:-" name="end_station"></td>
+        </tr>
+
+
+    </table>
+        <center>
+            <button type="submit" >Submit </button>
+
+            </center>
+
+</form>
+</body>
+</html>

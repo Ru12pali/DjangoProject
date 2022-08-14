@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Add Train</title>
+
+</head>
+<body>
+
+<h1>Railway Enquiry System</h1>
+<form action="#" method="post">
+ {% csrf_token %}
+    <h3>Train_Id:-<input type="text" name="train_id"></h3>
+    <h3>Start_Station:-<input type="text" name="start_station"></h3>
+    <h3>End_Station:-<input type="text" name="end_station"></h3>
+    <h3>Dept_Time:-<input type="text" name="dept_time"></h3>
+    <h3>Arr_Time:-<input type="text" name="arr_time"></h3>
+    <h3>Total_Seats:-<input type="text" name="total_seats"></h3>
+    <h3>Train_Name:-<input type="text" name="train_name"></h3>
+    <input type="submit" formaction="add" value="Add Train">
+</form>
+</body>
+</html>
